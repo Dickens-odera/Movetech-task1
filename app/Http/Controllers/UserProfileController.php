@@ -16,7 +16,8 @@ class UserProfileController extends Controller
     {
         //get the user information from the detals table
         $details = Details::all();
-        return view('profile.index')->with('details',$details);
+        $user = auth()->user();
+        return view('profile.index')->with(['details'=>$details,'user'=>$user]);
     }
 
     /**

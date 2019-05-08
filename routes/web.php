@@ -19,7 +19,7 @@ Route::get('detail/{id}','DetailsController@show'); //get the detuals of a singl
 Route::post('details','DetailsController@store'); //add new details
 Route::put('detail/{id}','DetailsController@update'); //update the details of the client requests
 Route::delete('detail/{id}','DetailsController@destroy'); //delete the information upon request
-Route::resource('profile','UserProfileControler'); //the url for the user to view their profiles
+Route::resource('profile','UserProfileController'); //the url for the user to view their profiles
 
 Auth::routes();
 

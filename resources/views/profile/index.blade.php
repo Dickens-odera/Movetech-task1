@@ -2,40 +2,35 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-12 justify-content-center">
-            <h4 class="text-center">My Profile</h4>
-        </div>
-
-    </div>
-    <div class="row">
         <div class="col-md-2">
 
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Personal Information</div>
+                <div class="card-header">Available Personal Details</div>
                 <div class="card-body">
-                    @if(isset($user))
+                    @if(isset($details))
                         <table class="table table-striped">
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
+                                <th>Phone Number</th>
+                                <th>Address</th>
+                                <th>Location</th>
+                                <th>Action</th>
                             </tr>
-                            @foreach($user as $s)
-                                <tr>
-                                    <td>{{$user->name}}</td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->phone}}</td>
-                                </tr>
+                            @foreach($details  as $info)
+                            <tr>
+                                <td>{{ $info->phone }}</td>
+                                <td>{{ $info->address }}</td>
+                                <td>{{ $info->location }}</td>
+                                <td><a href="{ url('profile/{$details->id}/edit')}" class="btn btn-success">Edit</a></td>
+                            </tr>
                             @endforeach
                         </table>
+
                     @endif
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
-
-        </div>
+        <div class="col-md-2"></div>
     </div>
 @endsection

@@ -17,7 +17,7 @@ class UserProfileController extends Controller
         //get the user information from the detals table
         $details = Details::all();
         $user = auth()->user();
-        return view('profile.index')->with(['details'=>$details,'user'=>$user]);
+        return view('profile.index')->with(['details'=>$details,'details'=>$details]);
     }
 
     /**
@@ -60,7 +60,8 @@ class UserProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $details = Details::findOrFail($id);
+        return view('profile.edit')->with('details', $details);
     }
 
     /**

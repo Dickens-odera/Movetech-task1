@@ -22,7 +22,8 @@
                                 <td>{{ $info->phone }}</td>
                                 <td>{{ $info->address }}</td>
                                 <td>{{ $info->location }}</td>
-                                <td><a href="{ url('profile/{$details->id}/edit')}" class="btn btn-success">Edit</a></td>
+                            
+                                <td><a href="/profile/{{  $info->id  }}" class="btn btn-success">View More</a></td>                    
                             </tr>
                             @endforeach
                         </table>

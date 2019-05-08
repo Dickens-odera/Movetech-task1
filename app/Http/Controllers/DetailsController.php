@@ -45,6 +45,7 @@ class DetailsController extends Controller
         $details = new Details;
         $details->address = $request->input('address');
         $details->location = $request->input('location');
+        $details->hobby = $request->input('hobby');
         $details->phone = $request->input('phone');
         $details->user_id = auth()->user()->id; //get the id of the currently logged in user
         //$details->hobby = $request->input('hobby');
@@ -63,7 +64,9 @@ class DetailsController extends Controller
      */
     public function show($id)
     {
-        //
+        //find a single detail
+        $detail = Details::find($id);
+        return view('profile.show')->with('detail', $detail);
     }
 
     /**

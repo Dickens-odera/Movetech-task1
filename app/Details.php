@@ -11,6 +11,6 @@ class Details extends Model
 
     //declare the table fields
     protected $fillable = [
-        'address','location','phone','hobby','user_id'
+        'address','location','phone','hobby'
     ];
 }

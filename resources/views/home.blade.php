@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Personal Information</div>
+                <div class="card-header">Add Personal Information</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -28,13 +28,14 @@
                             {!!Form::text('phone','',['class'=>'form-control'])!!}
                         </div>
                         <div class="form-group">
-                            {!!Form::label('hobby','Pick a Hobby')!!}
+                            {!!Form::label('hobby','Select Your Hobby')!!}
                         </div>
                         <div class="form-group">
-                            {!!Form::checkbox('movies','',['value'=>'Watching Movies'])!!}
+                          Watching Movies <?php echo  Form::checkbox('hobby','watching movies') ;?> <br>
+                          Playing Football <?php echo Form::checkbox('hobby','Playing Football') ;?>
                         </div>
                         <div class="form-group">
-                            {!!Form::submit('SUBMIT',['class'=>'btn btn-primary','fas fa-user'])!!}
+                            {!!Form::submit('SUBMIT',['class'=>'btn btn-primary'])!!}
                         </div>
                     {!!Form::close()!!}
                     <!-- END FORM -->
